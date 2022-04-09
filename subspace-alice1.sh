@@ -8,13 +8,13 @@ if exists curl; then
 else
   sudo apt install curl -y < "/dev/null"
 fi
-[Logo]
+#Logo
 curl -s https://raw.githubusercontent.com/m1crocrypto/other/main/logo.sh | bash && sleep 1
 
-[Upgrade]
+#Upgrade
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install wget -y
 
-[Install]
+#Install
 cd $HOME
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
@@ -26,13 +26,13 @@ cd $HOME && \
 rm -Rvf $HOME/subspace
 farmer --version && subspace --version
 
-[Wallet]
+#Wallet
 echo "export NICKNAME="Alice1"" >> ~/.bash_profile
 echo "export SUBSPACE_ADDRESS="stAiC6FikDtXKjFhdzfW6CH7CKyNzdMeNvCzAhabiGyNxRMaK"" >> ~/.bash_profile
 source ~/.bash_profile
 echo "моникер: '$NICKNAME', кошелёк: '$SUBSPACE_ADDRESS'."
 
-[Service]
+#Service
 sudo tee <<EOF >/dev/null /etc/systemd/system/subspaced.service
 [Unit]
 Description=Subspace Node
@@ -58,12 +58,12 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
-[Start]
+#Start
 sudo systemctl daemon-reload && \
 sudo systemctl enable subspaced && \
 sudo systemctl restart subspaced
 
-[Service farmer]
+#Service_farmer
 sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
 [Unit]
 Description=Subspace Farmer
@@ -79,7 +79,7 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
-[Start farmer]
+#Start_farmer
 sudo systemctl daemon-reload && \
 sudo systemctl enable farmerd && \
 sudo systemctl restart farmerd
