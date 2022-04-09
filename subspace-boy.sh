@@ -28,7 +28,7 @@ rm -Rvf $HOME/subspace
 farmer --version && subspace --version
 
 #Wallet
-echo "export NICKNAME="Boy0"" >> ~/.bash_profile
+echo "export NICKNAME="Boy1"" >> ~/.bash_profile
 echo "export SUBSPACE_ADDRESS="stAiC6FikDtXKjFhdzfW6CH7CKyNzdMeNvCzAhabiGyNxRMaK"" >> ~/.bash_profile
 source ~/.bash_profile
 echo "моникер: '$NICKNAME', кошелёк: '$SUBSPACE_ADDRESS'."
