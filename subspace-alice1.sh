@@ -1,10 +1,18 @@
 #!/bin/bash
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+if exists curl; then
+	echo ''
+else
+  sudo apt install curl -y < "/dev/null"
+fi
 [Logo]
 curl -s https://raw.githubusercontent.com/m1crocrypto/other/main/logo.sh | bash && sleep 1
 
 [Upgrade]
-sudo apt-get update && sudo apt-get upgrade -y
-sudo apt-get install wget -y
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install wget -y
 
 [Install]
 cd $HOME
