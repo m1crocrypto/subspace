@@ -54,3 +54,24 @@ EOF
 sudo systemctl daemon-reload && \
 sudo systemctl enable subspaced && \
 sudo systemctl restart subspaced
+
+[Service farmer]
+sudo tee <<EOF >/dev/null /etc/systemd/system/farmerd.service
+[Unit]
+Description=Subspace Farmer
+After=network.target
+[Service]
+Type=simple
+User=$USER
+ExecStart=$(which farmer) farm --reward-address=$SUBSPACE_ADDRESS
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=10000
+[Install]
+WantedBy=multi-user.target
+EOF
+
+[Start farmer]
+sudo systemctl daemon-reload && \
+sudo systemctl enable farmerd && \
+sudo systemctl restart farmerd
