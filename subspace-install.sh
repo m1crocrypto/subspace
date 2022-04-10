@@ -16,7 +16,7 @@ fi
 #Nodename
 if [ ! $NICKNAME ]; then
 		read -p "Введите имя ноды: " NICKNAME
-		echo 'export NICKNAMEE='\"${NICKNAME}\" >> $HOME/.bash_profile
+		echo 'export NICKNAME='\"${NICKNAME}\" >> $HOME/.bash_profile
 fi
 if [ ! $SUBSPACE_ADDRESS ]; then
 		read -p "Введите адрес кошелька: " SUBSPACE_ADDRESS
