@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd $HOME
+
 #Logo
 curl -s https://raw.githubusercontent.com/m1crocrypto/other/main/logo.sh | bash && sleep 1
 
@@ -15,15 +17,16 @@ fi
 
 #Nodename
 if [ ! $NICKNAME ]; then
-		read -p "Введите имя ноды: " NICKNAME
-		echo 'export NICKNAME='\"${NICKNAME}\" >> $HOME/.bash_profile
+		read -p "Enter node name: " NICKNAME
+		echo 'export NICKNAME='\"${NICKNAME}\" >> ~/.bash_profile
 fi
 if [ ! $SUBSPACE_ADDRESS ]; then
-		read -p "Введите адрес кошелька: " SUBSPACE_ADDRESS
-		echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> $HOME/.bash_profile
+		read -p "Enter wallet: " SUBSPACE_ADDRESS
+		echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> ~/.bash_profile
 fi
+source ~/.bash_profile
 . $HOME/.bash_profile
-echo "Имя ноды: '$NICKNAME', Кошелёк: '$SUBSPACE_ADDRESS'."
+echo "Nodename: '$NICKNAME', Wallet: '$SUBSPACE_ADDRESS'."
 
 #Upgrade
 sudo apt-get update && sudo apt-get upgrade -y
