@@ -15,7 +15,7 @@ else
   sudo apt install curl -y < "/dev/null"
 fi
 
-#Nodename
+#Variables
 if [ ! $NICKNAME ]; then
 		read -p "Enter node name: " NICKNAME
 		echo 'export NICKNAME='\"${NICKNAME}\" >> ~/.bash_profile
@@ -24,8 +24,8 @@ if [ ! $SUBSPACE_ADDRESS ]; then
 		read -p "Enter wallet: " SUBSPACE_ADDRESS
 		echo 'export SUBSPACE_ADDRESS='\"${SUBSPACE_ADDRESS}\" >> ~/.bash_profile
 fi
+cd $HOME
 source ~/.bash_profile
-. $HOME/.bash_profile
 echo "Nodename: '$NICKNAME', Wallet: '$SUBSPACE_ADDRESS'."
 
 #Upgrade
