@@ -96,3 +96,5 @@ EOF
 sudo systemctl daemon-reload && \
 sudo systemctl enable farmerd && \
 sudo systemctl restart farmerd
+
+source ~/.bash_profile
