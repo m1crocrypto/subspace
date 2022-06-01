@@ -51,9 +51,9 @@ cd $HOME && \
 rm -Rvf $HOME/subspace
 
 # Смотрим версию бинарников
-echo " " 
+echo " "
 echo "Version:"
-subspace --version && farmer --version 
+subspace --version && farmer --version
 
 # Фиксим журнал
 sudo tee <<EOF >/dev/null /etc/systemd/journald.conf
