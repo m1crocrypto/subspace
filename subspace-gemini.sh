@@ -34,6 +34,8 @@ echo "Nodename: '$NICKNAME', Wallet: '$SUBSPACE_ADDRESS', Disk space: '$SPACE'"
 
 # Обновление дистрибутива
 sudo apt-get update && sudo apt-get upgrade -y
+
+# Зависимости
 sudo apt-get install wget jq -y
 
 # Установка
