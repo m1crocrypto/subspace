@@ -29,7 +29,6 @@ if [ ! $SPACE ]; then
 		echo 'export SPACE='\"${SPACE}\" >> ~/.bash_profile
 fi
 cd $HOME
-source ~/.bash_profile
 echo "Nodename: '$NICKNAME', Wallet: '$SUBSPACE_ADDRESS', Disk space: '$SPACE'"
 
 # Обновление дистрибутива
