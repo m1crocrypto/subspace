@@ -41,8 +41,8 @@ sudo apt-get install wget jq -y
 cd $HOME
 mkdir $HOME/subspace; \
 cd $HOME/subspace && \
-wget -O subspace-node https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-node-ubuntu-x86_64-gemini-1b-2022-june-03
-wget -O subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-02/subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-03
+wget -O subspace-node https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-03/subspace-node-ubuntu-x86_64-gemini-1b-2022-june-03          
+wget -O subspace-farmer https://github.com/subspace/subspace/releases/download/gemini-1b-2022-june-03/subspace-farmer-ubuntu-x86_64-gemini-1b-2022-june-03
 sudo chmod +x * && \
 sudo mv * /usr/local/bin/ && \
 cd $HOME && \
